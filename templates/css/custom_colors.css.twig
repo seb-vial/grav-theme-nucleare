@@ -1,0 +1,122 @@
+{%if theme_config.colors.text_color %}
+body,
+button,
+input,
+select,
+textarea,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+	color: {{ theme_config.colors.text_color }};
+}
+{% endif %}
+
+{% if theme_config.colors.links_and_buttons %}
+a,
+.entry_title a:hover,
+.post-navigation .meta-nav .next-prev-name:hover,
+.entry-title a:focus,
+.site-info a,
+label[for="show-more-tags"] {
+	color: {{ theme_config.colors.links_and_buttons }};
+}
+
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+#infinite-handle span,
+.simple-search .top-search,
+.widget.wp_widget_tag_cloud a,
+.menu-toggle:focus, .menu-toggle:hover,
+.entry-featured-image,
+.site-branding .entry-featured-image:hover {
+	background: {{ theme_config.colors.links_and_buttons }};
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+	border-color: {{ theme_config.colors.links_and_buttons }}
+}
+
+.main-navigation div > ul > li > ul::before {
+	border-color: transparent transparent {{ theme_config.colors.links_and_buttons }};
+}
+
+.main-navigation div > ul > li > ul > li:first-child {
+	border-top-color: {{ theme_config.colors.links_and_buttons }};
+}
+{% endif %}
+
+{% if theme_config.colors.links_and_buttons_hover %}
+.button:hover,
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+#infinite-handle span:hover,
+.simple-search .top-search:hover, .simple-search .top-search:focus,
+.widget.wp_widget_tag_cloud a.active, .widget.wp_widget_tag_cloud a:hover,
+.button:focus,
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+#infinite-handle span:focus,
+.button:active,
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active,
+#infinite-handle span:active {
+	background: {{ theme_config.colors.links_and_buttons_hover }};
+}
+
+a:hover,
+a:focus,
+a:active,
+.entry-title a,
+.site-info a:hover,
+label[for="show-more-tags"]:hover,
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+	color: {{ theme_config.colors.links_and_buttons_hover }};
+}
+{% endif %}
+
+{% if theme_config.colors.navbar %}
+.navigation-bar {
+	background: {{ theme_config.colors.navbar }};
+}
+{% endif %}
+
+{% if theme_config.colors.navbar_items %}
+.main-navigation li {
+	background: {{ theme_config.colors.navbar_items }};
+}
+{% endif %}
+
+{% if theme_config.colors.content_background %}
+.hentry, .page-header, .page-content,
+.entry-featured-image:after {
+	background: {{ theme_config.colors.content_background }}
+}
+{% endif %}
+
+{% if theme_config.colors.background %}
+body {
+	background: {{ theme_config.colors.background }}
+}
+{% endif %}

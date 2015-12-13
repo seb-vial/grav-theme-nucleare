@@ -1,0 +1,129 @@
+{% set header_image = page.header.header_image|defined(true) %}
+{% set header_image_width  = page.header.header_image_width|defined(900) %}
+{% set header_image_height = page.header.header_image_height|defined(500) %}
+{% set header_image_file = page.header.header_image_file %}
+
+{# If it's not a blog page #}
+{% if not page.header.content %}
+    <article class="post hentry published">
+        {%if header_image %}
+        <figure class="entry-featured-image">
+            {% if truncate %}
+            <a href="{{ page.url }}" rel="bookmark" title="{{ page.title }}">
+            {% endif %}
+            {% if header_image_file %}
+                {% set header_image_media = page.media.images[header_image_file] %}
+            {% else %}
+                {% set header_image_media = page.media.images|first %}
+            {% endif %}
+            {{ header_image_media.cropZoom(header_image_width, header_image_height).html }}
+            {% if truncate %}
+                <figcaption>
+                    <p>
+                        <i class="fa fa-file-text"></i>
+                    </p>
+                </figcaption>
+            </a>
+            {% endif %}
+        </figure>
+        {% endif %}
+        <header class="entry-header">
+        {% if page.taxonomy.category %}
+            <div class="entry-category">
+                <span class="cat-links">
+                {% for cat in page.taxonomy.category %}
+                    <a href="{{ base_url }}/category{{ config.system.param_sep }}{{ cat|e('url') }}">{{ cat }}</a>
+                    {%if not loop.last %}
+                    /
+                    {% endif %}
+                {% endfor %}
+                </span>
+            </div>
+        {% endif %}
+            <h1 class="entry-title">{{ page.title }}</h1>
+            <div class="entry-meta small-part">
+                <span class="posted-on">
+                    <i class="fa fa-clock-o space-left-right"></i> {{ page.date|date("d/m/Y") }}
+                </span>
+                <span class="byline">
+                    <i class="fa fa-user space-left-right"></i>
+                    <span class="author vcard">
+                        {{ page.header.author ? page.header.author.name : config.site.author.name}}
+                    </span>
+                </span>
+                {% if config.plugins.jscomments.enabled and not truncate %}
+                <span class="comment-link">
+                    <i class="fa fa-comments-o space-left-right"></i>
+                    <a href="{{ page.url }}/#comment">Leave a comment</a>
+                </span>
+                {% endif %}
+            </div>
+        </header>
+        <div class="entry-content">
+            {% if page.header.continue_link is sameas(false) %}
+                {{ page.content }}
+                {% if not truncate %}
+                {% set show_prev_next = true %}
+                {% endif %}
+            {% elseif truncate and page.summary != page.content %}
+                {{ page.summary }}
+                <p><a href="{{ page.url }}">Read more...</a></p>
+            {% elseif truncate %}
+                {% if page.summary != page.content %}
+                    {{ page.content|truncate(550) }}
+                {% else %}
+                    {{ page.content }}
+                {% endif %}
+                <p><a href="{{ page.url }}">Read more...</a></p>
+            {% else %}
+                {{ page.content }}
+                {% set show_prev_next = true %}
+            {% endif %}
+        </div>
+        <footer class="entry-footer">
+            <div class="entry-bottom small-part">
+            {%if page.taxonomy.tag %}
+                <span class="tags-links">
+                    <i class="fa fa-tags space-right"></i>
+                {% for tag in page.taxonomy.tag %}
+                    <a href="{{ base_url }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
+                    {%if not loop.last %}
+                    ,
+                    {% endif %}
+                {% endfor %}
+                </span>
+            {% endif %}
+            </div>
+        <footer>
+    </article>
+
+    {% if show_prev_next and (not page.isFirst or not page.isLast) %}
+    <nav class="navigation post-navigation" role="navigation">
+        <h1 class="screen-reader-text">Blog navigation</h1>
+        <div class="nav-links">
+            {% if not page.isLast %}
+                <div class="nav-previous">
+                    <a href="{{ page.prevSibling.url }}" rel="prev">
+                        <div class="the-navigation-arrow"><i class="fa prev-next fa-2x fa-angle-left"></i></div>
+                        <div class="meta-nav">
+                            <span class="small-part">Previous post</span>
+                            <div class="next-prev-name">{{ page.prevSibling.title }}</div>
+                        </div>
+                    </a>
+                </div>
+            {% endif %}
+            {% if not page.isFirst %}
+                <div class="nav-next">
+                    <a href="{{ page.nextSibling.url }}" rel="next">
+                        <div class="the-navigation-arrow"><i class="fa prev-next fa-2x fa-angle-right"></i></div>
+                        <div class="meta-nav">
+                            <span class="small-part">Next post</span>
+                            <div class="next-prev-name">{{ page.nextSibling.title }}</div>
+                        </div>
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </nav>
+    {% endif %}
+{% endif %}

@@ -1,0 +1,115 @@
+name: Nucleare
+version: 1.0.0
+description: "Nucleare theme adapted from the Wordpress theme"
+icon: empire
+author:
+  name: Sébastien Viallemonteil
+  email: sviallemonteil@gmail.com
+  url: https://scratchmydev.com
+homepage: https://github.com/birssan/grav-theme-nucleare
+demo: 
+keywords: nucleare, theme, wordpress, modern, fast, responsive, html5, css3
+bugs: 
+license: MIT
+
+form:
+  validation: loose
+  fields:
+    default_lang:
+      type: text
+      size: small
+      label: Default lang
+      default: 'en'
+      validate:
+        type: text
+    sidebar:
+      type: toggle
+      label: Enable Sidebar for the all site (can disable individually on each page)
+      highlight: 1
+      default: 1
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+    Header Image:
+      type: section
+      title: Header Image
+      underline: true
+    header_image.src:
+      type: text
+      size: large
+      label: Source Path
+      default: "assets/header-code.jpg"
+      validate:
+        type: text
+    header_image.height:
+      type: text
+      size: small
+      label: "The height of the header image, overflow will be hidden"
+      default: "400px"
+      validate:
+        type: text
+    Colors:
+        type: section
+        title: Custom Colors
+        underline: true
+    custom_colors:
+      type: toggle
+      label: Custom Colors
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+    colors.text_color:
+        type: text
+        size: small
+        label: General Text Color
+        default: "#5e5e5e"
+        validate:
+          type: text
+    colors.links_and_buttons:
+        type: text
+        size: small
+        label: Links Color | Buttons Background Color
+        default: "#7fc7af"
+        validate:
+          type: text
+    colors.links_and_buttons_hover:
+        type: text
+        size: small
+        label: Links Color(Hover) | Buttons Background Color(Hover)
+        default: "#5e5e5e"
+        validate:
+          type: text
+    colors.background:
+        type: text
+        size: small
+        label: Website Background
+        default: "#f2f2f2"
+        validate:
+          type: text
+    colors.content_background:
+        type: text
+        size: small
+        label: 'Background of articles, headers, etc'
+        default: "#FFFFFF"
+        validate:
+          type: text
+    colors.navbar:
+        type: text
+        size: small
+        label: Navbar Background
+        default: "#FFFFFF"
+        validate:
+          type: text
+    colors.navbar_items:
+        type: text
+        size: small
+        label: Navbar Background for Items
+        default: "#FFFFFF"
+        validate:
+          type: text

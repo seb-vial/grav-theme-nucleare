@@ -1,0 +1,10 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+	<header class="page-header">
+		<h1 class="page-title">Error {{ page.header.http_response_code }}</h1>
+		<div class="taxonomy-description">
+			{{ page.content }}
+		</div>
+	</header>
+{% endblock %}

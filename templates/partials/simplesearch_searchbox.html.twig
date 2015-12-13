@@ -1,0 +1,36 @@
+<div class="search-full">
+    <div class="search-container">
+        <form role="search" method="get" class="search-form" action="{{ base_url }}{{ config.plugins.simplesearch.route}}/query">
+			<label>
+				<span class="screen-reader-text">Recherche pour&nbsp;:</span>
+				<input type="search" class="search-field" placeholder="Search (at least 2 characters)" name="search-field">
+			</label>
+			<input type="submit" class="search-submit" value="Search">
+		</form>
+    <span><a class="close-search"><i class="fa fa-close space-right"></i>Fermer</a></span>
+    </div>
+</div>
+{% do assets.addInlineJs('jQuery(document).ready(function($){
+	$(".open-search").on("click", function(e) {
+		$(".search-full").fadeIn(400);
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+		} else {
+			$(".search-full .search-field").focus();
+		}
+	});
+
+	$(".close-search").on("click", function(e) {
+		$(".search-full").fadeOut(400);
+	});
+
+	$(".search-form, .result-search-form").on("submit", function(e) {
+		e.preventDefault();
+		var search_val = $(this).hasClass("result-search-form") ? $.trim($(".result-search-field").val()) : $.trim($(".search-field").val());
+		if (search_val.length >= 2) {
+			var action = $(this).prop("action");
+			window.location.href = action + "' ~ config.system.param_sep ~ '" + search_val;
+		}
+		return false;
+	});
+});
+</script>' , {'group': 'bottom'}) %}

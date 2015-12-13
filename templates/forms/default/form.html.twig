@@ -1,0 +1,28 @@
+{{ dump(form) }}
+{% if form.message %}<p class="form-error-message">{{ form.message }}</p>{% endif %}
+{% set multipart = '' %}
+{% set method = form.method|upper|default('POST') %}
+
+{% for field in form.fields %}
+    {% if (method == 'POST' and field.type == 'file') %}
+        {% set multipart = ' enctype="multipart/form-data"' %}
+    {% endif %}
+{% endfor %}
+
+<form name="{{ form.name }}" class="contact-form"
+      action="{{ form.action ? base_url ~ form.action : page.url }}"
+      method="{{ method }}"{{ multipart }}>
+
+{% for field in form.fields %}
+    {% set value = form.value(field.name) %}
+    {% include "forms/fields/#{field.type}/#{field.type}.html.twig" %}
+{% endfor %}
+
+	<div class="buttons">
+	{% for button in form.buttons %}
+	    <button class="{{ button.classes|default('button') }}" type="{{ button.type|default('submit') }}">{{ button.value|default('Submit') }}</button>
+	{% endfor %}
+	</div>
+
+  {{ nonce_field('form', 'form-nonce') }}
+</form>

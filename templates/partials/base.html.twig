@@ -1,0 +1,120 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+{% set is_sidebar = header.sidebar is sameas(true) or (header.sidebar is not defined and theme_config.sidebar is sameas(true)) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+<head>
+
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+    {% include 'partials/metadata.html.twig' %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png', true) }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+
+    {% block stylesheets %}
+        {% do assets.addCss('theme://css/font-awesome.min.css',103) %}
+        {% do assets.addCss('https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600',103) %}
+        {% do assets.addCss('https://fonts.googleapis.com/css?family=Roboto+Slab:300',103) %}
+        {% do assets.addCss('theme://css/style.css', 102) %}
+        {% if theme_config.rtl %}
+            {% do assets.addCss('theme://css/rtl.css', 101) %}
+        {% endif %}
+        {% if theme_config.colors and theme_config.custom_colors %}
+            {% set custom_colors = include('css/custom_colors.css.twig') %}
+            {% do assets.addInlineCss(custom_colors, 102) %}
+        {% endif %}
+        {% do assets.addCss('theme://css/custom.css',100) %}
+
+        {% if browser.getBrowser == 'msie' and browser.getVersion >= 8 and browser.getVersion <= 9 %}
+            {% do assets.addJs('theme://js/html5shiv-printshiv.min.js') %}
+        {% endif %}
+    {% endblock %}
+    {{ assets.css() }}
+
+    {% block javascripts %}
+        {% do assets.addJs('jquery',101) %}
+        {% do assets.addJs('theme://js/modernizr.custom.71422.js',100) %}
+        {% do assets.addJs('theme://js/skip-link-focus-fix.js',100) %}
+        {% do assets.addJs('theme://js/nucleare.js') %}
+    {% endblock %}
+    {{ assets.js() }}
+
+{% endblock head%}
+</head>
+<body id="top" class="{{ page.header.body_classes }}">
+    <div id="page" class="hfeed site">
+        {% block header %}
+        <div class="navigation-bar clear">
+            <div class="navigation-block">
+                <nav id="site-navigation" class="main-navigation" role="navigation">
+                    <button class="menu-toggle" aria-controls="menu" aria-expanded="false"><i class="fa fa-bars"></i><span class="screen-reader-text">Menu</span></button>
+                    {% block header_navigation %}
+                        {% include 'partials/navigation.html.twig' %}
+                    {% endblock %}
+                </nav><!-- #site-navigation -->
+                {% if config.plugins.simplesearch.enabled %}
+                    <div class="simple-search">
+                        <div class="open-search top-search"><i class="fa fa-search"><span class="screen-reader-text">Search</span></i></div>
+                    </div>
+                {% endif %}
+                {% if config.plugins.langswitcher.enabled %}
+                    {% include 'partials/langswitcher.html.twig' %}
+                {% endif %}
+            </div>
+        </div>
+
+        {% if config.plugins.simplesearch.enabled %}
+            {% include 'partials/simplesearch_searchbox.html.twig' %}
+        {% endif %}
+
+        <header id="masthead" class="site-header" role="banner">
+            <div class="site-branding">
+                <h1 class="site-title"><a href="{{ base_url }}" rel="home">{{ site.title }}</a></h1>
+                {% if site.description %}
+                    <h2 class="site-description">{{ site.description }}</h2>
+                {% endif %}
+                {% if theme_config.header_image %}
+                    <figure class="entry-featured-image">
+                    <a class="site-header-image" href="{{ base_url }}" rel="home" {{ theme_config.header_image.height ? 'style="max-height: ' ~ theme_config.header_image.height ~ '"' : '' }}>
+                        <img src="{{ theme_url }}/{{ theme_config.header_image.src }}" width="{{ theme_config.header_image.width ? : '100%' }}" height="auto"  alt="" class="custom-header">
+                        <figcaption>
+                        <p>
+                            <i class="fa fa-home"></i>
+                        </p>
+                        </figcaption>
+                    </a>
+                    </figure>
+                {% endif %}
+            </div><!-- .site-branding -->
+        </header><!-- #masthead -->
+        {% endblock %}
+        <div id="content" class="site-content">
+            <div id="primary" class="content-area{{ is_sidebar ? '' : ' full-width' }}">
+                <main id="main" class="site-main" role="main">
+                    {% block content %}{% endblock %}
+                </main>
+            </div>
+            {% if is_sidebar %}
+                <div id="secondary" class="widget-area" role="complementary">
+                {% include 'partials/sidebar.html.twig' %}
+                </div>
+            {% endif %}
+        </div>
+        {% block footer %}
+        <footer id="colophon" class="site-footer" role="contentinfo">
+            <div class="site-info social-icons">
+                {# You can put links to your social pages here #}
+            </div>
+            <div class="site-info small-part">
+                <span>© My Website</span>&nbsp;|&nbsp;
+                <span>Theme based on <a target="_blank" href="https://wordpress.com/themes/nucleare/">Nucleare</a>, WordPress theme
+            </div><!-- .site-info -->
+        </footer><!-- #colophon -->
+        {% endblock %}
+    </div><!-- #page -->
+    <a href="#top" class="to-top"><i class="fa fa-angle-up fa-lg"><span class="screen-reader-text">Back to top</span></i></a>
+
+    {{ assets.js('bottom') }}
+</body>
+</html>

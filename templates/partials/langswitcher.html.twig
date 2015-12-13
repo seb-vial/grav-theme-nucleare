@@ -1,0 +1,25 @@
+{% set langobj = grav['language'] %}
+<div class="langswitcher">
+	<div class="lang-menu">
+		<ul>
+			<li>
+				<a href="{{ page.url }}">{{  langswitcher.current }}</a>
+				<ul class="sub-menu">
+					{% for key, language in langswitcher.languages %}
+
+					    {% if key == langswitcher.current %}
+					        {% set lang_url = page.url %}
+					        {% set active_class = 'current-menu-item' %}
+					    {% else %}
+					        {% set lang_url = base_url_simple ~ langobj.getLanguageURLPrefix(key)~langswitcher.page_route ?: '/' %}
+					        {% set active_class = '' %}
+					    {% endif %}
+
+					    <li class="{{ active_class }}"><a href="{{ lang_url }}">{{  language.nativeName|capitalize }}</a></li>
+
+					{% endfor %}
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
