@@ -3,6 +3,7 @@
 ![Nucleare](assets/readme_1.png)
 This template is based on the WordPress theme, named [Nucleare](https://wordpress.com/themes/nucleare/).
 It's aimed to be used mainly for blogs, although you can use it with default type pages (Modular templates will comme later).
+There might be some problems or features that I forgot, I tried to do my best from what I had with the WordPress theme. If you find something wrong, please open an issue or make a pull request, I'll be glad to look into it. Thanks
 
 ## Features
 
@@ -21,6 +22,11 @@ It's aimed to be used mainly for blogs, although you can use it with default typ
 * Blog view template
 * Blog item view template
 * Error view template
+* Simple search view / partial view
+* Breadcrumbs partial view
+* Navigation partial view
+* Langswitcher partial view within navigation
+* Taxonomy list partial view
 * Modular view templates:
   * Features Modular: TODO
   * Showcase Modular: TODO
