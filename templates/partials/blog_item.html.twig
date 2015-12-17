@@ -94,7 +94,12 @@
                 </span>
             {% endif %}
             </div>
-        <footer>
+            {% if config.plugins.socialbuttons.enabled %}
+                <div class="entry-meta small-part">
+                    {% include 'partials/socialbuttons.html.twig' with {'url' : page.url} %}
+                </div>
+            {% endif %}
+        </footer>
     </article>
 
     {% if show_prev_next and (not page.isFirst or not page.isLast) %}

@@ -1784,6 +1784,60 @@ label[for="show-more-tags"]:hover {
 	min-height: 65px;
 }
 
+/** Social buttons plugin */
+ul.rrssb-buttons {
+	font-family: "Open Sans", "Helvetica Neue", Helvetica;
+}
+
+ul.rrssb-buttons li,
+ul.rrssb-buttons.large-format li {
+	width: auto !important;
+}
+
+ul.rrssb-buttons li a,
+ul.rrssb-buttons li.small a,
+ul.rrssb-buttons.large-format li a {
+	border-radius: 0;
+	padding: 0 10px;
+	line-height: 30px;
+	position: static;
+}
+
+ul.rrssb-buttons li a .rrssb-icon,
+ul.rrssb-buttons li.small a .rrssb-icon {
+	overflow: visible;
+	position: static;
+	display: inline-block;
+	vertical-align: middle;
+	width: auto;
+}
+
+ul.rrssb-buttons li a .rrssb-text,
+ul.rrssb-buttons li.small a .rrssb-text {
+	visibility: visible;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+@media all and (max-width: 579px) {
+	ul.rrssb-buttons li,
+	ul.rrssb-buttons.large-format li {
+		width: 100% !important;
+		margin-bottom: 10px;
+	}
+
+	ul.rrssb-buttons.large-format li a .rrssb-icon svg {
+		width: auto;
+		position: static;
+	}
+
+	ul.rrssb-buttons.large-format li:first-child:nth-last-child(4) a,
+	ul.rrssb-buttons.large-format li:first-child:nth-last-child(4) ~ li a {
+		font-size: 16px;
+		padding-top: 9px;
+	}
+}
+
 /*--------------------------------------------------------------
 10.2 Post Formats
 --------------------------------------------------------------*/

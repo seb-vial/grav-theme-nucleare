@@ -1,6 +1,6 @@
 name: Nucleare
-version: 1.0.0
-description: "Nucleare theme adapted from the Wordpress theme"
+version: 1.0.2
+description: "Theme for the Grav CMS, based on the WordPress theme named Nucleare. It's mainly aimed to be used for a Blog, but you can also create simple pages. Modular pages to come"
 icon: empire
 author:
   name: Sébastien Viallemonteil

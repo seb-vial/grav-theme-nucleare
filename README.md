@@ -16,7 +16,7 @@ There might be some problems or features that I forgot, I tried to do my best fr
 * Header image is optional
 * Sidebar is disabled by default, you can enable it for all the pages, or enable it individually on the pages you want it to appear. You might want to do it the other way around (enable it by default and disable it on the few pages you don't want it)
 
-### Supported Page Templates
+### Supported Page Templates (and Plugins)
 
 * Default view template
 * Blog view template
@@ -27,6 +27,8 @@ There might be some problems or features that I forgot, I tried to do my best fr
 * Navigation partial view
 * Langswitcher partial view within navigation
 * Taxonomy list partial view
+* Social buttons plugin included in each blog item if enabled. (CSS adapted)
+* JSComment included in the blog item template if enabled
 * Modular view templates:
   * Features Modular: TODO
   * Showcase Modular: TODO
