@@ -4,7 +4,7 @@
 			{% include 'partials/breadcrumbs.html.twig' %}
 		{% endif %}
 	    {% include 'partials/blog_item.html.twig' with {'blog':page.parent, 'truncate':false} %}
-	    {% if config.plugins/jscomments.enabled %}
+	    {% if config.plugins.jscomments.enabled %}
 	    	{{ jscomments() }}
 	    {% endif %}
 	{% endblock %}
