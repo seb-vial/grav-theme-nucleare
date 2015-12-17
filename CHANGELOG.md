@@ -1,3 +1,8 @@
+# v1.0.2
+## 12/17/2015
+1. [](#bugfix)
+    * The plugin is included in each blog item if enabled. I've change the CSS to be more in cohesion with the theme.
+
 # v1.0.1
 ## 12/17/2015
 1. [](#bugfix)
