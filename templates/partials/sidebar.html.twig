@@ -1,3 +1,10 @@
+{% if config.plugins.aboutme.enabled %}
+    <aside class="widget">
+    <h1 class="widget-title">About Me</h1>
+        {% include 'partials/aboutme.html.twig' %}
+    </aside>
+{% endif %}
+
 {% if config.plugins.relatedpages.enabled and related_pages|length > 0 %}
     <aside class="widget">
     <h1 class="widget-title">Related Posts</h1>
