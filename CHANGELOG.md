@@ -1,5 +1,5 @@
 # v1.0.3
-## 21/17/2015
+## 12/21/2015
 
 1. [](#new)
     * The AboutMe plugin is included in the sidebar
