@@ -70,13 +70,13 @@
 
         <header id="masthead" class="site-header" role="banner">
             <div class="site-branding">
-                <h1 class="site-title"><a href="{{ base_url }}" rel="home">{{ site.title }}</a></h1>
+                <h1 class="site-title"><a href="{{ base_url == '' ? '/' : base_url }}" rel="home">{{ site.title }}</a></h1>
                 {% if site.description %}
                     <h2 class="site-description">{{ site.description }}</h2>
                 {% endif %}
                 {% if theme_config.header_image %}
                     <figure class="entry-featured-image">
-                    <a class="site-header-image" href="{{ base_url }}" rel="home" {{ theme_config.header_image.height ? 'style="max-height: ' ~ theme_config.header_image.height ~ '"' : '' }}>
+                    <a class="site-header-image" href="{{ base_url == '' ? '/' : base_url }}" rel="home" {{ theme_config.header_image.height ? 'style="max-height: ' ~ theme_config.header_image.height ~ '"' : '' }}>
                         <img src="{{ theme_url }}/{{ theme_config.header_image.src }}" width="{{ theme_config.header_image.width ? : '100%' }}" height="auto"  alt="" class="custom-header">
                         <figcaption>
                         <p>
