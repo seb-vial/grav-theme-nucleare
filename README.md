@@ -28,6 +28,7 @@ There might be some problems or features that I forgot, I tried to do my best fr
 * Langswitcher partial view within navigation
 * Taxonomy list partial view
 * Social buttons plugin included in each blog item if enabled. (CSS adapted)
+* AboutMe plugin included in the sidebar
 * JSComment included in the blog item template if enabled
 * Modular view templates:
   * Features Modular: TODO
