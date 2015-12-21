@@ -1,3 +1,9 @@
+# v1.0.6
+## 12/21/2015
+
+1. [](#bugfix)
+    * Well it's better when you have your website name in the footer instead of "My Website"...
+
 # v1.0.5
 ## 12/21/2015
 

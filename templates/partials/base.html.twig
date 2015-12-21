@@ -103,11 +103,8 @@
         </div>
         {% block footer %}
         <footer id="colophon" class="site-footer" role="contentinfo">
-            <div class="site-info social-icons">
-                {# You can put links to your social pages here #}
-            </div>
             <div class="site-info small-part">
-                <span>© My Website</span>&nbsp;|&nbsp;
+                <span>© {{ site.title }} - {{ date().format('Y') }}</span>&nbsp;|&nbsp;
                 <span>Theme based on <a target="_blank" href="https://wordpress.com/themes/nucleare/">Nucleare</a>, WordPress theme
             </div><!-- .site-info -->
         </footer><!-- #colophon -->
