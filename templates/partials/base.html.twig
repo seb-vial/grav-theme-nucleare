@@ -74,7 +74,7 @@
                 {% if site.description %}
                     <h2 class="site-description">{{ site.description }}</h2>
                 {% endif %}
-                {% if theme_config.header_image %}
+                {% if theme_config.header_image.enabled %}
                     <figure class="entry-featured-image">
                     <a class="site-header-image" href="{{ base_url == '' ? '/' : base_url }}" rel="home" {{ theme_config.header_image.height ? 'style="max-height: ' ~ theme_config.header_image.height ~ '"' : '' }}>
                         <img src="{{ theme_url }}/{{ theme_config.header_image.src }}" width="{{ theme_config.header_image.width ? : '100%' }}" height="auto"  alt="" class="custom-header">

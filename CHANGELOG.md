@@ -1,7 +1,13 @@
+# v1.0.5
+## 12/21/2015
+
+1. [](#improved)
+    * Added a toggle for the header image so it's easier to disable
+
 # v1.0.4
 ## 12/21/2015
 
-1. [](#bufix)
+1. [](#bugfix)
     * Fixed the link to go back to the home page on the site title and the header image if there is one
 
 # v1.0.3
