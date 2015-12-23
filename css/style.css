@@ -248,7 +248,8 @@ p {
 	margin-bottom: 1.6em;
 }
 
-blockquote + p {
+blockquote + p,
+div.notices p {
 	margin-top: 1.6em;
 }
 
