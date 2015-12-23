@@ -47,11 +47,13 @@ textarea:focus {
 	border-color: {{ theme_config.colors.links_and_buttons }}
 }
 
-.main-navigation div > ul > li > ul::before {
+.main-navigation div > ul > li > ul::before,
+.langswitcher div > ul > li > ul::before {
 	border-color: transparent transparent {{ theme_config.colors.links_and_buttons }};
 }
 
-.main-navigation div > ul > li > ul > li:first-child {
+.main-navigation div > ul > li > ul > li:first-child,
+.langswitcher div > ul > li > ul > li:first-child {
 	border-top-color: {{ theme_config.colors.links_and_buttons }};
 }
 {% endif %}
