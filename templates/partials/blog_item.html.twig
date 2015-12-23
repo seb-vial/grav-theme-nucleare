@@ -48,13 +48,13 @@
                 <span class="byline">
                     <i class="fa fa-user space-left-right"></i>
                     <span class="author vcard">
-                        {{ page.header.author ? page.header.author.name : config.site.author.name}}
+                        {{ page.header.author ? page.header.author : config.site.author.name}}
                     </span>
                 </span>
-                {% if config.plugins.jscomments.enabled and not truncate %}
+                {% if config.plugins.jscomments.enabled and header.jscomments and not truncate %}
                 <span class="comment-link">
                     <i class="fa fa-comments-o space-left-right"></i>
-                    <a href="{{ page.url }}/#comment">Leave a comment</a>
+                    <a href="{{ page.url }}/#comment">{{ 'THEME_NUCLEARE.BLOG.LEAVE_COMMENT'|t }}</a>
                 </span>
                 {% endif %}
             </div>

@@ -1,3 +1,12 @@
+# v1.1.0
+## 12/23/2015
+
+1. [](#bugfix)
+    * Added a margin top for notices from the Markdown notices plugin
+    * The top border color of the langswitcher menu was not replaced by the custom color if set
+2. [](#new)
+    * Multi-Language support added, for now, English and French are supported
+
 # v1.0.6
 ## 12/21/2015
 

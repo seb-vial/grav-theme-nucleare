@@ -1,6 +1,8 @@
 # Nucleare
 
 ![Nucleare](assets/readme_1.png)
+![Nucleare](assets/readme_2.png)
+
 This template is based on the WordPress theme, named [Nucleare](https://wordpress.com/themes/nucleare/).
 It's aimed to be used mainly for blogs, although you can use it with default type pages (Modular templates will comme later).
 There might be some problems or features that I forgot, I tried to do my best from what I had with the WordPress theme. If you find something wrong, please open an issue or make a pull request, I'll be glad to look into it. Thanks
@@ -11,6 +13,7 @@ There might be some problems or features that I forgot, I tried to do my best fr
 * Lightweight and minimal for optimal performance
 * Fully responsive with off-page mobile navigation
 * Multiple page template types
+* Multi-language support
 * Fontawesome icon support
 * Customize main colors of the theme (background, links, buttons), look at the blueprints to see the options
 * Header image is optional
@@ -35,6 +38,11 @@ There might be some problems or features that I forgot, I tried to do my best fr
   * Showcase Modular: TODO
   * Text Modular: TODO
 * SnipCart: TODO
+
+### Supported languages
+* English
+* French
+* If you want another language to be supported, please look into the `languages.yaml`, add your language and make a Pull Request
 
 # Installation
 

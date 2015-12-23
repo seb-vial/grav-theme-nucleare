@@ -14,6 +14,7 @@ en:
       CATEGORY: Category
       TAG: Tag
       READ_MORE: Read more
+      LEAVE_COMMENT: Leave a comment
       NAVIGATION: Blog navigation
       PREV: Previous post
       NEXT: Next post
@@ -45,6 +46,7 @@ fr:
       CATEGORY: Categorie
       TAG: Tag
       READ_MORE: Lire la suite
+      LEAVE_COMMENT: Laisser un commentaire
       NAVIGATION: Navigation dans les articles
       PREV: Article précédent
       NEXT: Article suivant
