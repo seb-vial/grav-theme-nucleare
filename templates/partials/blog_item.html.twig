@@ -67,7 +67,7 @@
                 {% endif %}
             {% elseif truncate and page.summary != page.content %}
                 {{ page.summary }}
-                <p><a href="{{ page.url }}">Read more...</a></p>
+                <p><a href="{{ page.url }}">{{ 'THEME_NUCLEARE.BLOG.READ_MORE'|t }}...</a></p>
             {% elseif truncate %}
                 {% if page.summary != page.content %}
                     {{ page.content|truncate(550) }}

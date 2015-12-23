@@ -1,3 +1,9 @@
+# v1.1.1
+## 12/23/2015
+
+1. [](#improved)
+    * Forgot one "Read more" in blog_item template
+
 # v1.1.0
 ## 12/23/2015
 
