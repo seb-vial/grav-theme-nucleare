@@ -1,9 +1,6 @@
 {% set originalValue = originalValue is defined ? originalValue : value %}
 {% set value = (value is null ? field.default : value) %}
-{# {% set vertical = field.style == 'vertical' %} #}
-{% set vertical = true %}
 
-{{ dump(field) }}
 {% block field %}
     <div>
         {% block contents %}

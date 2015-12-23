@@ -8,7 +8,7 @@
 		{% endif %}
 		{% if page.content|trim('') != '' %}
 		<header class="page-header">
-			<h1 class="page-title">Category: {{ page.title }}</h1>
+			<h1 class="page-title">{{ 'THEME_NUCLEARE.BLOG.CATEGORY'|t }}: {{ page.title }}</h1>
 			<div class="taxonomy-description">
 				{{ page.content }}
 			</div>
@@ -16,7 +16,7 @@
 		{% endif %}
 		{% if uri.param('category') or uri.param('tag') %}
 		<header class="page-header">
-			<h1 class="page-title">{{ uri.param('category') ? 'Category: ' ~ uri.param('category') : 'Tag: ' ~ uri.param('tag') }}</h1>
+			<h1 class="page-title">{{ uri.param('category') ? 'THEME_NUCLEARE.BLOG.CATEGORY'|t ~ ': ' ~ uri.param('category') : 'THEME_NUCLEARE.BLOG.TAG'|t ~ ': ' ~ uri.param('tag') }}</h1>
 		</header>
 		{% endif %}
 		{% for child in collection %}

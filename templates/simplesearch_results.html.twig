@@ -2,14 +2,14 @@
 
 {% block content %}
     <header class="page-header">
-        <h1 class="page-title">Results of your search for: <mark>{{ query }}</mark></h1>
+        <h1 class="page-title">{{ 'THEME_NUCLEARE.SEARCH.RESULTS_FOR'|t }}: <mark>{{ query }}</mark></h1>
         <div class="taxonomy-description">
             {% if search_results.count is sameas(0) %}
-                <p>No result</p>
+                <p>{{ 'THEME_NUCLEARE.SEARCH.NO_RESULT'|t }}</p>
             {% endif %}
             <form role="search" method="get" class="result-search-form" action="{{ base_url }}{{ config.plugins.simplesearch.route}}/query">
-                <input type="search" class="result-search-field" placeholder="Search… (at least 2 characters)" name="search-field">
-                <input type="submit" class="result-search-submit" value="Search">
+                <input type="search" class="result-search-field" placeholder="{{ 'THEME_NUCLEARE.SEARCH.PLACEHOLDER'|t }}" name="search-field">
+                <input type="submit" class="result-search-submit" value="{{ 'THEME_NUCLEARE.SEARCH.BUTTON'|t }}">
             </form>
         </div>
     </header>

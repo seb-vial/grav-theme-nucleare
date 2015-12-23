@@ -1,2 +1,61 @@
 en:
-  TRANSLATION_TEST: Nucleare!
+  THEME_NUCLEARE:
+    CLOSE: Close
+    FOOTER: 'Theme based on %s, a Wordpress theme'
+    DATE_FORMAT: m/d/Y
+    ERROR: Error
+    SEARCH:
+      BUTTON: Search
+      FOR: Search for
+      PLACEHOLDER: Search (at least 2 characters)
+      RESULTS_FOR: Results of your search for
+      NO_RESULT: No result
+    BLOG:
+      CATEGORY: Category
+      TAG: Tag
+      READ_MORE: Read more
+      NAVIGATION: Blog navigation
+      PREV: Previous post
+      NEXT: Next post
+    FORM:
+      SUMMARY: Here is the summary of what you wrote to us
+    SIDEBAR:
+      ABOUTME: About Me
+      RELATED_POSTS: Related Posts
+      RANDOM_POST: Random Post
+      BEST_TAGS: Best Tags
+      ARCHIVES: Archives
+      FEEDS: Feeds
+    TAGS:
+      MORE: More
+
+fr:
+  THEME_NUCLEARE:
+    CLOSE: Fermer
+    FOOTER: 'Thème basé sur %s, un thème Wordpress'
+    DATE_FORMAT: d/m/Y
+    ERROR: Erreur
+    SEARCH:
+      BUTTON: Rerchercher
+      FOR: Rercherche pour
+      PLACEHOLDER: Rercherche (minimum 2 caractères)
+      RESULTS_FOR: Résultats de votre rercherche pour
+      NO_RESULT: Aucun résultat
+    BLOG:
+      CATEGORY: Categorie
+      TAG: Tag
+      READ_MORE: Lire la suite
+      NAVIGATION: Navigation dans les articles
+      PREV: Article précédent
+      NEXT: Article suivant
+    FORM:
+      SUMMARY: Voici le résumé des informations que vous nous avez envoyées
+    SIDEBAR:
+      ABOUTME: À propos de moi
+      RELATED_POSTS: Articles similaires
+      RANDOM_POST: Article au hasard
+      BEST_TAGS: Meilleurs Tags
+      ARCHIVES: Archives
+      FEEDS: Flux
+    TAGS:
+      MORE: Plus

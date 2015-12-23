@@ -43,7 +43,7 @@
             <h1 class="entry-title">{{ page.title }}</h1>
             <div class="entry-meta small-part">
                 <span class="posted-on">
-                    <i class="fa fa-clock-o space-left-right"></i> {{ page.date|date("d/m/Y") }}
+                    <i class="fa fa-clock-o space-left-right"></i> {{ page.date|date('THEME_NUCLEARE.DATE_FORMAT'|t) }}
                 </span>
                 <span class="byline">
                     <i class="fa fa-user space-left-right"></i>
@@ -74,7 +74,7 @@
                 {% else %}
                     {{ page.content }}
                 {% endif %}
-                <p><a href="{{ page.url }}">Read more...</a></p>
+                <p><a href="{{ page.url }}">{{ 'THEME_NUCLEARE.BLOG.READ_MORE'|t }}...</a></p>
             {% else %}
                 {{ page.content }}
                 {% set show_prev_next = true %}
@@ -104,14 +104,14 @@
 
     {% if show_prev_next and (not page.isFirst or not page.isLast) %}
     <nav class="navigation post-navigation" role="navigation">
-        <h1 class="screen-reader-text">Blog navigation</h1>
+        <h1 class="screen-reader-text">{{ 'THEME_NUCLEARE.BLOG.NAVIGATION'|t }}</h1>
         <div class="nav-links">
             {% if not page.isLast %}
                 <div class="nav-previous">
                     <a href="{{ page.prevSibling.url }}" rel="prev">
                         <div class="the-navigation-arrow"><i class="fa prev-next fa-2x fa-angle-left"></i></div>
                         <div class="meta-nav">
-                            <span class="small-part">Previous post</span>
+                            <span class="small-part">{{ 'THEME_NUCLEARE.BLOG.PREV'|t }}</span>
                             <div class="next-prev-name">{{ page.prevSibling.title }}</div>
                         </div>
                     </a>
@@ -122,7 +122,7 @@
                     <a href="{{ page.nextSibling.url }}" rel="next">
                         <div class="the-navigation-arrow"><i class="fa prev-next fa-2x fa-angle-right"></i></div>
                         <div class="meta-nav">
-                            <span class="small-part">Next post</span>
+                            <span class="small-part">{{ 'THEME_NUCLEARE.BLOG.NEXT'|t }}</span>
                             <div class="next-prev-name">{{ page.nextSibling.title }}</div>
                         </div>
                     </a>

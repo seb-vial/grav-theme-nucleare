@@ -1,19 +1,15 @@
 {% set taxlist = taxonomylist.get() %}
-
-<aside class="widget wp_widget_tag_cloud">
-	<h1 class="widget-title">Meilleurs Tags</h1>
-	{% if taxlist %}
-		{% set nb_tags = count(taxlist[taxonomy]) %}
-	    {% for tax,value in taxlist[taxonomy] %}
-	        {% set active = uri.param(taxonomy) == tax ? 'active' : '' %}
-	        {% set hidden = loop.index > maxtag ? 'hidden' : '' %}
-	        <a class="{{ active }} {{ hidden }}" href="{{ base_url }}/{{ taxonomy }}{{ config.system.param_sep }}{{ tax|e('url') }}">{{ tax }}</a>
-	        {% if loop.index is sameas(maxtag) and nb_tags > maxtag %}
-	        	<input type="checkbox" id="show-more-tags" class="hidden">
-	        	<label for="show-more-tags">More</label>
-	        {% endif %}
-	    {% endfor %}
-	{% else %}
+{% if taxlist %}
+	{% set nb_tags = count(taxlist[taxonomy]) %}
+    {% for tax,value in taxlist[taxonomy] %}
+        {% set active = uri.param(taxonomy) == tax ? 'active' : '' %}
+        {% set hidden = loop.index > maxtag ? 'hidden' : '' %}
+        <a class="{{ active }} {{ hidden }}" href="{{ base_url }}/{{ taxonomy }}{{ config.system.param_sep }}{{ tax|e('url') }}">{{ tax }}</a>
+        {% if loop.index is sameas(maxtag) and nb_tags > maxtag %}
+        	<input type="checkbox" id="show-more-tags" class="hidden">
+        	<label for="show-more-tags">{{ 'THEME_NUCLEARE.TAGS.MORE'|t }}</label>
+        {% endif %}
+    {% endfor %}
+{% else %}
 	<p>Aucun Tag</p>
-	{% endif %}
-</aside>
+{% endif %}

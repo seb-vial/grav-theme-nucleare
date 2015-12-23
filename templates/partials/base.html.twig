@@ -55,7 +55,7 @@
                 </nav><!-- #site-navigation -->
                 {% if config.plugins.simplesearch.enabled %}
                     <div class="simple-search">
-                        <div class="open-search top-search"><i class="fa fa-search"><span class="screen-reader-text">Search</span></i></div>
+                        <div class="open-search top-search"><i class="fa fa-search"><span class="screen-reader-text">{{ 'THEME_NUCLEARE.SEARCH.BUTTON'|t }}</span></i></div>
                     </div>
                 {% endif %}
                 {% if config.plugins.langswitcher.enabled %}
@@ -105,7 +105,7 @@
         <footer id="colophon" class="site-footer" role="contentinfo">
             <div class="site-info small-part">
                 <span>© {{ site.title }} - {{ date().format('Y') }}</span>&nbsp;|&nbsp;
-                <span>Theme based on <a target="_blank" href="https://wordpress.com/themes/nucleare/">Nucleare</a>, WordPress theme
+                <span>{{ 'THEME_NUCLEARE.FOOTER'|t('<a target="_blank" href="https://wordpress.com/themes/nucleare/">Nucleare</a>') }}
             </div><!-- .site-info -->
         </footer><!-- #colophon -->
         {% endblock %}

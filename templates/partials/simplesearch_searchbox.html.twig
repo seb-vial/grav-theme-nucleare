@@ -2,12 +2,12 @@
     <div class="search-container">
         <form role="search" method="get" class="search-form" action="{{ base_url }}{{ config.plugins.simplesearch.route}}/query">
 			<label>
-				<span class="screen-reader-text">Recherche pour&nbsp;:</span>
-				<input type="search" class="search-field" placeholder="Search (at least 2 characters)" name="search-field">
+				<span class="screen-reader-text">{{ 'THEME_NUCLEARE.SEARCH.FOR'|t }} :</span>
+				<input type="search" class="search-field" placeholder="{{ 'THEME_NUCLEARE.SEARCH.PLACEHOLDER'|t }}" name="search-field">
 			</label>
-			<input type="submit" class="search-submit" value="Search">
+			<input type="submit" class="search-submit" value="{{ 'THEME_NUCLEARE.SEARCH.BUTTON'|t }}">
 		</form>
-    <span><a class="close-search"><i class="fa fa-close space-right"></i>Fermer</a></span>
+    <span><a class="close-search"><i class="fa fa-close space-right"></i>{{ 'THEME_NUCLEARE.CLOSE'|t }}</a></span>
     </div>
 </div>
 {% do assets.addInlineJs('jQuery(document).ready(function($){
