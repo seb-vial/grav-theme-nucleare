@@ -47,8 +47,8 @@
         {% block header %}
         <div class="navigation-bar clear">
             <div class="navigation-block">
-                <nav id="site-navigation" class="main-navigation" role="navigation">
-                    <button class="menu-toggle" aria-controls="menu" aria-expanded="false"><i class="fa fa-bars"></i><span class="screen-reader-text">Menu</span></button>
+                <nav id="site-navigation" class="main-navigation">
+                    <button class="menu-toggle" aria-expanded="false"><i class="fa fa-bars"></i><span class="screen-reader-text">Menu</span></button>
                     {% block header_navigation %}
                         {% include 'partials/navigation.html.twig' %}
                     {% endblock %}
@@ -68,7 +68,7 @@
             {% include 'partials/simplesearch_searchbox.html.twig' %}
         {% endif %}
 
-        <header id="masthead" class="site-header" role="banner">
+        <header id="masthead" class="site-header">
             <div class="site-branding">
                 <h1 class="site-title"><a href="{{ base_url == '' ? '/' : base_url }}" rel="home">{{ site.title }}</a></h1>
                 {% if site.description %}
@@ -91,7 +91,7 @@
         {% endblock %}
         <div id="content" class="site-content">
             <div id="primary" class="content-area{{ is_sidebar ? '' : ' full-width' }}">
-                <main id="main" class="site-main" role="main">
+                <main id="main" class="site-main">
                     {% block content %}{% endblock %}
                 </main>
             </div>
