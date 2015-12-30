@@ -48,7 +48,7 @@
         <div class="navigation-bar clear">
             <div class="navigation-block">
                 <nav id="site-navigation" class="main-navigation">
-                    <button class="menu-toggle" aria-expanded="false"><i class="fa fa-bars"></i><span class="screen-reader-text">Menu</span></button>
+                    <button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"><i class="fa fa-bars"></i><span class="screen-reader-text">Menu</span></button>
                     {% block header_navigation %}
                         {% include 'partials/navigation.html.twig' %}
                     {% endblock %}
@@ -77,7 +77,7 @@
                 {% if theme_config.header_image.enabled %}
                     <figure class="entry-featured-image">
                     <a class="site-header-image" href="{{ base_url == '' ? '/' : base_url }}" rel="home" {{ theme_config.header_image.height ? 'style="max-height: ' ~ theme_config.header_image.height ~ '"' : '' }}>
-                        <img src="{{ theme_url }}/{{ theme_config.header_image.src }}" alt="Featured Image" class="custom-header">
+                        <img src="{{ theme_url }}/{{ theme_config.header_image.src }}" alt="{{ 'THEME_NUCLEARE.HEADER_IMAGE_ALT'|t }}" class="custom-header">
                         <figcaption>
                         <p>
                             <i class="fa fa-home"></i>

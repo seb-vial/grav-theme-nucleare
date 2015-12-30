@@ -11,7 +11,7 @@
                 {% else %}
                 {{ field.label|default(field.name|capitalize) }}
                 {% endif %}
-                {{ field.validate.required in ['on', 'true', 1] ? '<span class="required">(obligatoire)</span>' }}
+                {{ field.validate.required in ['on', 'true', 1] ? '<span class="required">(' ~ 'THEME_NUCLEARE.SEARCH.REQUIRED'|t ~ ')</span>' }}
             {% endblock %}
             </label>
             {% block group %}

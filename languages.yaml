@@ -4,15 +4,18 @@ en:
     FOOTER: 'Theme based on %s, a Wordpress theme'
     DATE_FORMAT: m/d/Y
     ERROR: Error
+    HEADER_IMAGE_ALT: Featured image for the site
     SEARCH:
       BUTTON: Search
       FOR: Search for
       PLACEHOLDER: Search (at least 2 characters)
+      REQUIRED: Required
       RESULTS_FOR: Results of your search for
       NO_RESULT: No result
     BLOG:
       CATEGORY: Category
       TAG: Tag
+      HEADER_IMAGE_ALT: Blog post featured image
       READ_MORE: Read more
       LEAVE_COMMENT: Leave a comment
       NAVIGATION: Blog navigation
@@ -29,6 +32,7 @@ en:
       FEEDS: Feeds
     TAGS:
       MORE: More
+      NO_TAG: No Tag
 
 fr:
   THEME_NUCLEARE:
@@ -36,15 +40,18 @@ fr:
     FOOTER: 'Thème basé sur %s, un thème Wordpress'
     DATE_FORMAT: d/m/Y
     ERROR: Erreur
+    HEADER_IMAGE_ALT: Image de présentation du site
     SEARCH:
       BUTTON: Rerchercher
       FOR: Rercherche pour
       PLACEHOLDER: Rercherche (minimum 2 caractères)
+      REQUIRED: Obligatoire
       RESULTS_FOR: Résultats de votre rercherche pour
       NO_RESULT: Aucun résultat
     BLOG:
       CATEGORY: Categorie
       TAG: Tag
+      HEADER_IMAGE_ALT: Image de présentation de l'article
       READ_MORE: Lire la suite
       LEAVE_COMMENT: Laisser un commentaire
       NAVIGATION: Navigation dans les articles
@@ -61,3 +68,4 @@ fr:
       FEEDS: Flux
     TAGS:
       MORE: Plus
+      NO_TAG: Aucun Tag
