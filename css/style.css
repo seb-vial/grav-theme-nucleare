@@ -1332,9 +1332,6 @@ label[for="show-more-tags"]:hover {
 	background: #fff;
 	box-shadow: 0 0 2px rgba(0,0,0,.05);
 }
-.site-header {
-	margin-bottom: 4.5em;
-}
 .custom-header {
 	margin-bottom: 1.6em;
 }
@@ -1404,7 +1401,7 @@ label[for="show-more-tags"]:hover {
 .site-title {
 	font-size: 50px;
 	font-size: 5.0rem;
-	margin: 0;
+	margin: 15px;
 	letter-spacing: -2px;
 	line-height: 1.6;
 }
