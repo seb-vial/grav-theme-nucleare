@@ -1,3 +1,11 @@
+# v1.1.2
+## 12/31/2015
+
+1. [](#improved)
+    * Added a few translations and fixed few HTML syntax errors
+    * Deleted default language from settings, useless
+    * Added Dropdown toggle to settings, you can enable or disable dropdown in navigation bar
+
 # v1.1.1
 ## 12/23/2015
 
