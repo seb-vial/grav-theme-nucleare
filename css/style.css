@@ -1352,11 +1352,9 @@ label[for="show-more-tags"]:hover {
 	display: block;
 	max-height: 500px;
 	overflow: hidden;
-	background-color: rgba(0, 0, 0, 0.6);
 }
 .site-header-image img {
 	position: relative;
-	z-index: -1;
 }
 .site-branding .entry-featured-image:hover img {
 	z-index: 0;
