@@ -1,3 +1,10 @@
+# v1.1.3
+## 01/26/2016
+
+1. [](#improved)
+    * Remove unneeded streams from Theme YAML
+    * Delete composer.json
+
 # v1.1.2
 ## 12/31/2015
 
