@@ -8,10 +8,3 @@ header_image:
   enabled: true
   src: assets/header-code.jpg
   height: 400px
-
-streams:
-  schemes:
-    theme:
-      type: ReadOnlyStream
-      paths:
-        - user/themes/nucleare
