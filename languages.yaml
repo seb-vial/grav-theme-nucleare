@@ -69,3 +69,39 @@ fr:
     TAGS:
       MORE: Plus
       NO_TAG: Aucun Tag
+      
+ro:
+  THEME_NUCLEARE:
+    CLOSE: Închide
+    FOOTER: 'Temă bazată pe %s, o temă de Wordpress'
+    DATE_FORMAT: m/d/Y
+    ERROR: Eroare
+    HEADER_IMAGE_ALT: Imagine reprezentativă pentru site
+    SEARCH:
+      BUTTON: Caută
+      FOR: Caută după
+      PLACEHOLDER: Caută (cel puțin două caractere)
+      REQUIRED: Necesar
+      RESULTS_FOR: Rezultatele căutării după
+      NO_RESULT: Niciun rezultat
+    BLOG:
+      CATEGORY: Categorie
+      TAG: Etichetă
+      HEADER_IMAGE_ALT: Imagine reprezentativă articol blog
+      READ_MORE: Citește mai mult
+      LEAVE_COMMENT: Lasă un comentariu
+      NAVIGATION: Navigare blog
+      PREV: Articolul anterior
+      NEXT: Articolul următor
+    FORM:
+      SUMMARY: Iată rezumatul a ce ne-ai scris
+    SIDEBAR:
+      ABOUTME: Despre mine
+      RELATED_POSTS: Articole relaționate
+      RANDOM_POST: Articol aleatoriu
+      BEST_TAGS: Cele mai bune etichete
+      ARCHIVES: Arhive
+      FEEDS: Feeduri
+    TAGS:
+      MORE: Mai mult
+      NO_TAG: Fără etichetă
