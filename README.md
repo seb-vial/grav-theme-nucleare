@@ -42,6 +42,7 @@ There might be some problems or features that I forgot, I tried to do my best fr
 ### Supported languages
 * English
 * French
+* Romanian
 * If you want another language to be supported, please look into the `languages.yaml`, add your language and make a Pull Request
 
 # Installation
