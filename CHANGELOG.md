@@ -1,3 +1,9 @@
+# v1.1.5
+## 06/10/2016
+
+1. [](#bugfix)
+    * Fixed language display in langswitcher template
+
 # v1.1.4
 ## 06/10/2016
 

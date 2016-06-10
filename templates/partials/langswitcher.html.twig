@@ -5,7 +5,7 @@
 			<li>
 				<a>{{  langswitcher.current }}</a>
 				<ul class="sub-menu">
-					{% for key, language in langswitcher.languages %}
+					{% for key in langswitcher.languages %}
 
 					    {% if key == langswitcher.current %}
 					        {% set lang_url = page.url %}
@@ -15,7 +15,7 @@
 					        {% set active_class = '' %}
 					    {% endif %}
 
-					    <li class="{{ active_class }}"><a href="{{ lang_url }}">{{  language.nativeName|capitalize }}</a></li>
+					    <li class="{{ active_class }}"><a href="{{ lang_url ~ uri.params }}">{{  native_name(key)|capitalize }}</a></li>
 
 					{% endfor %}
 				</ul>
