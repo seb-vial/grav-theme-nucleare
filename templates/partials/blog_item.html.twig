@@ -61,22 +61,22 @@
         </header>
         <div class="entry-content">
             {% if page.header.continue_link is sameas(false) %}
-                {{ page.content }}
+                {{ page.content|raw }}
                 {% if not truncate %}
                 {% set show_prev_next = true %}
                 {% endif %}
             {% elseif truncate and page.summary != page.content %}
-                {{ page.summary }}
+                {{ page.summary|raw }}
                 <p><a href="{{ page.url }}">{{ 'THEME_NUCLEARE.BLOG.READ_MORE'|t }}...</a></p>
             {% elseif truncate %}
                 {% if page.summary != page.content %}
                     {{ page.content|truncate(550) }}
                 {% else %}
-                    {{ page.content }}
+                    {{ page.content|raw }}
                 {% endif %}
                 <p><a href="{{ page.url }}">{{ 'THEME_NUCLEARE.BLOG.READ_MORE'|t }}...</a></p>
             {% else %}
-                {{ page.content }}
+                {{ page.content|raw }}
                 {% set show_prev_next = true %}
             {% endif %}
         </div>

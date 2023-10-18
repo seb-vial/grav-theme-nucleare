@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    {{ content }}
+    {{ content|raw }}
 
     <div class="alert">{{ form.message }}</div>
     <p>{{ 'THEME_NUCLEARE.FORM.SUMMARY'|t }}:</p>

@@ -4,14 +4,14 @@
 <html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
 <head>
 
-{% block head %}
+    {% block head deferred %}
     <meta charset="utf-8" />
     <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
     {% include 'partials/metadata.html.twig' %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png', true) }}" />
     <link rel="canonical" href="{{ page.url(true, true) }}" />
-
+    {% endblock head %}
     {% block stylesheets %}
         {% do assets.addCss('theme://css/font-awesome.min.css',103) %}
         {% do assets.addCss('https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600',103) %}
@@ -30,7 +30,6 @@
             {% do assets.addJs('theme://js/html5shiv-printshiv.min.js') %}
         {% endif %}
     {% endblock %}
-    {{ assets.css() }}
 
     {% block javascripts %}
         {% do assets.addJs('jquery',101) %}
@@ -38,9 +37,10 @@
         {% do assets.addJs('theme://js/skip-link-focus-fix.js',100) %}
         {% do assets.addJs('theme://js/nucleare.js') %}
     {% endblock %}
-    {{ assets.js() }}
-
-{% endblock head%}
+    {% block assets deferred %}
+        {{ assets.css()|raw }}
+        {{ assets.js()|raw }}
+    {% endblock %}
 </head>
 <body id="top" class="{{ page.header.body_classes }}">
     <div id="page" class="hfeed site">
@@ -105,13 +105,15 @@
         <footer id="colophon" class="site-footer">
             <div class="site-info small-part">
                 <span>© {{ site.title }} - {{ date().format('Y') }}</span>&nbsp;|&nbsp;
-                <span>{{ 'THEME_NUCLEARE.FOOTER'|t('<a target="_blank" href="https://wordpress.com/themes/nucleare/">Nucleare</a>') }}</span>
+                <span>{{ 'THEME_NUCLEARE.FOOTER'|t('<a target="_blank" href="https://wordpress.com/themes/nucleare/">Nucleare</a>')|raw }}</span>
             </div><!-- .site-info -->
         </footer><!-- #colophon -->
         {% endblock %}
     </div><!-- #page -->
     <a href="#top" class="to-top"><i class="fa fa-angle-up fa-lg"><span class="screen-reader-text">Back to top</span></i></a>
 
-    {{ assets.js('bottom') }}
+    {% block bottom %}
+        {{ assets.js('bottom') }}
+    {% endblock %}
 </body>
 </html>

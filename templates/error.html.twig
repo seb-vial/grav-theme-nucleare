@@ -4,7 +4,7 @@
 	<header class="page-header">
 		<h1 class="page-title">{{ 'THEME_NUCLEARE.ERROR'|t }} {{ page.header.http_response_code }}</h1>
 		<div class="taxonomy-description">
-			{{ page.content }}
+			{{ page.content|raw }}
 		</div>
 	</header>
 {% endblock %}
