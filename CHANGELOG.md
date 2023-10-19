@@ -1,3 +1,12 @@
+# v1.1.7
+
+## 19/10/2023
+
+1. [](#bugfix)
+   - Fixed raw content being displayed as text in blog template
+2. [](#new)
+   - Added styles to text selection
+
 # v1.1.6
 
 ## 18/10/2023
