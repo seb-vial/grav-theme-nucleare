@@ -1,3 +1,10 @@
+# v1.1.8
+
+## 11/01/2023
+
+1. [](#bugfix)
+   * Fixed syntax for changelog
+
 # v1.1.7
 
 ## 10/19/2023
